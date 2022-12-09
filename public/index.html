@@ -3,28 +3,16 @@
   <head>
     <link rel="stylesheet" src="../src/index.css">
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>  
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-</head>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/javascript" src="../src/redditFetch.js"></script>
+    <script type="text/jsx" src="../src/index.js"></script>
+  </head>
   <body>
     <div id="Main">
-    <script type="text/jsx" src="../src/index.js"></script>
-    </div>
-    <div id="reddit-Fetch">
-      <script>
-        fetch("https://www.reddit.com/r/popular.json")
-        .then((response) => { 
-      return response.json();
-        })
-        .then(data => {
-          JSON.parse(data);
-          data.map( ()=> {
-            console.log(data)
+      
 
-          })
-        })
-        .catch(error => console.log(error))
-        </script>
-    
+    </div>
+    <div id="subreddit">
   </div>
   </body>
 </html>

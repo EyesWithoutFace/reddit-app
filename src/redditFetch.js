@@ -1,5 +1,4 @@
 
-
 export function FetchPopular() {
 
     let parentdiv=document.createElement('div')
@@ -12,17 +11,24 @@ export function FetchPopular() {
                 let div=document.createElement('div')
                 let h4=document.createElement('h4')
                 let image=document.createElement('img')
-                let h6=document.createElement('h5')
-                let h5=document.createElement('h6')
-                image.src=body.data.children[index].data.thumbnail
+                let h5=document.createElement('h5')
+                let h6=document.createElement('h6')
+                let a=document.createElement('a')
+                image.src=body.data.children[index].data.url_overridden_by_dest
                 h4.textContent=body.data.children[index].data.title
-                h5.textContent=body.data.children[index].data.author
-                h6.textContent=body.data.children[index].data.subreddit_name_prefixed
+                h6.textContent=body.data.children[index].data.author
+                h5.textContent=body.data.children[index].data.subreddit_name_prefixed
+                a.src=body.data.children[index].data.url
                 div.appendChild(h4)
                 div.appendChild(h6)
                 div.appendChild(h5)
                 div.appendChild(image)
-                parentdiv.appendChild(div)
+                parentdiv.appendChild(div)            
+                h6.prepend('u/')
+                let aTag = document.createElement('a')
+                aTag.href = a
+                div.appendChild(aTag)
+                image.prepend(aTag)
             }
         }
         document.body.appendChild(parentdiv)

@@ -1,16 +1,17 @@
 import './App.css';
 import React from 'react';
+import {FetchPopular} from './redditFetch' 
 
- const App = () => {
+const App = () => {
   return (
     <>
-    <div className="Main">
-      <a href='#'>
+    <link rel='stylesheet' href='../src/App.css'></link>
+      <a href='../../index.html'>
       <h1>
       <img src='Reddit-Logo.png' alt='Reddit'></img>
       </h1>
       </a>
-    </div>
+    <h2 id="popularBtn" onClick={FetchPopular}>Popular</h2>
     </>
   );
 }
